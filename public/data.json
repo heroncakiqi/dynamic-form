@@ -1,0 +1,36 @@
+  [
+    {
+      "label": "Person name",
+      "name": "person_name",
+      "type": "text",
+      "value": null,
+      "rules": "required|min:3|max:64",
+      "options":[],
+      "multiple": false,
+      "readonly": false,
+      "placeholder": "Person name",
+      "info": "write your name"
+    },
+    {
+      "label": "Country",
+      "name": "country",
+      "type": "select",
+      "value": null,
+      "rules": "required|min:2|max:64",
+      "options": [
+        {
+          "label": "Italy",
+          "value": "italy"
+        },
+        {
+          "label": "Albania",
+          "value": "albania"
+        }
+      ],
+      "default_value": "albania",
+      "multiple": false,
+      "readonly": false,
+      "placeholder": "select",
+      "info": "select your country"
+    }
+  ]

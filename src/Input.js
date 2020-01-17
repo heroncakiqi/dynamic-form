@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Input = props => {
   const min = parseInt(props.rules.find(item => item.includes('min'))[1]);

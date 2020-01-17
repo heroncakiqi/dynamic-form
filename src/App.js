@@ -8,7 +8,6 @@ function App() {
     userInput: {},
     loading: false
   });
-
   useEffect(() => {
     async function getData() {
       const res = await fetch('./data.json');
@@ -18,14 +17,17 @@ function App() {
     }
     getData();
   },[])
-
-  const handleChange = (e) => {
+  const handleChange = (e, rules) => {
     setState({...state, userInput: {...state.userInput, [e.target.name]: e.target.value}})
   }
 
   const handleSubmit = e => {
     e.preventDefault();
     setState({...state, loading: true});
+    setTimeout(() => {
+      alert('thank you for your input!')
+    },1000)
+    setState({...state,loading: false});
   }
   const {formData} = state;
   return (

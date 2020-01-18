@@ -27,6 +27,8 @@ function App() {
     }
     getData();
   },[])
+
+
   const handleChange = (e) => {
     const deepCopy = JSON.parse(JSON.stringify(state.userInput.find(item => item.name === e.target.name)))
     const futureState = {
@@ -57,6 +59,8 @@ function App() {
       setTimeout(() => setState({...state, loading: false}),300)
     }
   }
+
+  
   const {formData} = state;
   return (
     <div className="App">

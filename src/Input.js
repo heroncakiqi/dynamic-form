@@ -11,9 +11,11 @@ const Input = props => {
     value: props.value || '',
     disabled: props.disabled || false,
   }
+
   const handleChange = (e) => {
     props.onChange(e, props.rules)
   }
+  
   let element = null;
   switch(props.type) {
     case 'text':

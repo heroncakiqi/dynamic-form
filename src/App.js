@@ -56,7 +56,7 @@ function App() {
     if(errors.length === 0) {
       setState({...state, loading: true})
       setTimeout(() => {
-        alert('thenk you for your input!')
+        alert('thank you for your input!')
         setState({...state, loading: false})
       },300)
     }

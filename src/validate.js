@@ -13,7 +13,7 @@ const validate = (input, rules) => {
       return `your input must be longer than ${max} letters!`
     }
   }
-  if(typeof input === 'number') {
+  else if(typeof input === 'number') {
     if(required.length > 0 && input.length < 1) {
       return 'you must fill this!'
     }

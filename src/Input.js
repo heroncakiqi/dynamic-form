@@ -15,7 +15,7 @@ const Input = props => {
   const handleChange = (e) => {
     props.onChange(e, props.rules)
   }
-  
+
   let element = null;
   switch(props.type) {
     case 'text':
@@ -40,7 +40,7 @@ const Input = props => {
       <label htmlFor={props.name}>{props.label}</label>
       {element}
       <br/>
-      <span>{props.error}</span>
+      <span style={{color: 'red'}}>{props.error}</span>
     </fieldset>
   )
 }

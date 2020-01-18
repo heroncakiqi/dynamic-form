@@ -48,19 +48,22 @@ function App() {
   const handleSubmit = e => {
     e.preventDefault();
     const errors = [];
-    setState({...state, loading: true})
     state.userInput.forEach(item => {
       if(item.error.length > 0) {
         errors.push(item.error)
       }
     })
     if(errors.length === 0) {
-      alert('thenk you for your input!')
-      setTimeout(() => setState({...state, loading: false}),300)
+      setState({...state, loading: true})
+      setTimeout(() => {
+        alert('thenk you for your input!')
+        setState({...state, loading: false})
+      },300)
     }
+    return;
   }
 
-  
+
   const {formData} = state;
   return (
     <div className="App">
@@ -69,7 +72,6 @@ function App() {
           <form onSubmit={handleSubmit}>
             {
               formData.map(item => {
-                const rules = item.rules.split('|').map(item => item.split(":"));
                 const currentItem = state.userInput.findIndex(s => s.name === item.name);    
                 return (
                   <React.Fragment  key={item.name}>
@@ -85,7 +87,6 @@ function App() {
                     disabled={state.loading}
                     //config
                     error={state.userInput[currentItem]['error']}
-                    rules={rules}
                     validation={item.rules}
                     options={item.options}
                     onChange={handleChange}
